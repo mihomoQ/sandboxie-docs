@@ -6,43 +6,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="RecoverFolder is a sandbox setting in Sandboxie Ini. It specifies the sandboxed folders that Quick Recovery should examine. Shell Folders may be specified. For example:
-   .
-   .
-   .
-   [DefaultBox]
-   RecoverFolder=%Personal%
-   RecoverFolder=C:\Downloads
-   [InstallBox]
-   RecoverFolder=D:\Program Files">
+        <meta name="description" content="CopyNewer is a sandbox setting in Sandboxie Ini, available since Sandboxie Plus 1.18.1. It specifies a list of file path patterns for which an existing sandbox copy of a file is refreshed when the matching file on the host has been modified more recently.">
       
       
       
-        <link rel="canonical" href="https://sandboxie-plus.github.io/sandboxie-docs/Content/RecoverFolder.html">
+        <link rel="canonical" href="https://sandboxie-plus.github.io/sandboxie-docs/Content/CopyNewer/">
       
       
       
       
         
-          <link rel="alternate" href="RecoverFolder.html" hreflang="en">
+          <link rel="alternate" href="./" hreflang="en">
         
-          <link rel="alternate" href="../zh-CN/Content/RecoverFolder.html" hreflang="zh">
+          <link rel="alternate" href="../../zh-CN/Content/CopyNewer/" hreflang="zh">
         
       
       
-      <link rel="icon" href="../material/assets/images/favicon.ico">
+      <link rel="icon" href="../../material/assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Recover Folder - Sandboxie Documentation</title>
+        <title>Copy Newer - Sandboxie Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,9 +47,9 @@
       
     
     
-      <link rel="stylesheet" href="../material/assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../material/assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -82,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#recover-folder" class="md-skip">
+        <a href="#copy-newer" class="md-skip">
           Skip to content
         </a>
       
@@ -98,9 +90,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Sandboxie Documentation" class="md-header__button md-logo" aria-label="Sandboxie Documentation" data-md-component="logo">
+    <a href="../.." title="Sandboxie Documentation" class="md-header__button md-logo" aria-label="Sandboxie Documentation" data-md-component="logo">
       
-  <img src="../Media/SandDocs.png" alt="logo">
+  <img src="../../Media/SandDocs.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -117,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Recover Folder
+              Copy Newer
             
           </span>
         </div>
@@ -174,13 +166,13 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="RecoverFolder.html" hreflang="en" class="md-select__link">
+            <a href="./" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="../zh-CN/Content/RecoverFolder.html" hreflang="zh" class="md-select__link">
+            <a href="../../zh-CN/Content/CopyNewer/" hreflang="zh" class="md-select__link">
               简体中文
             </a>
           </li>
@@ -278,9 +270,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Sandboxie Documentation" class="md-nav__button md-logo" aria-label="Sandboxie Documentation" data-md-component="logo">
+    <a href="../.." title="Sandboxie Documentation" class="md-nav__button md-logo" aria-label="Sandboxie Documentation" data-md-component="logo">
       
-  <img src="../Media/SandDocs.png" alt="logo">
+  <img src="../../Media/SandDocs.png" alt="logo">
 
     </a>
     Sandboxie Documentation
@@ -368,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="HelpTopics.html" class="md-nav__link">
+      <a href="../HelpTopics/" class="md-nav__link">
         
   
   
@@ -396,7 +388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="GettingStarted.html" class="md-nav__link">
+      <a href="../GettingStarted/" class="md-nav__link">
         
   
   
@@ -487,7 +479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SandboxieControl.html" class="md-nav__link">
+      <a href="../SandboxieControl/" class="md-nav__link">
         
   
   
@@ -515,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="FileMenu.html" class="md-nav__link">
+      <a href="../FileMenu/" class="md-nav__link">
         
   
   
@@ -543,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ViewMenu.html" class="md-nav__link">
+      <a href="../ViewMenu/" class="md-nav__link">
         
   
   
@@ -571,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SandboxMenu.html" class="md-nav__link">
+      <a href="../SandboxMenu/" class="md-nav__link">
         
   
   
@@ -599,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ConfigureMenu.html" class="md-nav__link">
+      <a href="../ConfigureMenu/" class="md-nav__link">
         
   
   
@@ -627,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="HelpMenu.html" class="md-nav__link">
+      <a href="../HelpMenu/" class="md-nav__link">
         
   
   
@@ -655,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="TrayIconMenu.html" class="md-nav__link">
+      <a href="../TrayIconMenu/" class="md-nav__link">
         
   
   
@@ -691,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="UsageTips.html" class="md-nav__link">
+      <a href="../UsageTips/" class="md-nav__link">
         
   
   
@@ -772,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="StartCommandLine.html" class="md-nav__link">
+      <a href="../StartCommandLine/" class="md-nav__link">
         
   
   
@@ -800,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SbieIniCommandLine.html" class="md-nav__link">
+      <a href="../SbieIniCommandLine/" class="md-nav__link">
         
   
   
@@ -836,7 +828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SandboxieIni.html" class="md-nav__link">
+      <a href="../SandboxieIni/" class="md-nav__link">
         
   
   
@@ -871,7 +863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="KnownConflicts.html" class="md-nav__link">
+      <a href="../KnownConflicts/" class="md-nav__link">
         
   
   
@@ -951,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="PlusMigrationGuide.html" class="md-nav__link">
+      <a href="../PlusMigrationGuide/" class="md-nav__link">
         
   
   
@@ -979,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../PlusContent/Plus-Features.html" class="md-nav__link">
+      <a href="../../PlusContent/Plus-Features/" class="md-nav__link">
         
   
   
@@ -1079,7 +1071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="AdvancedTopics.html" class="md-nav__link">
+      <a href="../AdvancedTopics/" class="md-nav__link">
         
   
   
@@ -1107,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SandboxHierarchy.html" class="md-nav__link">
+      <a href="../SandboxHierarchy/" class="md-nav__link">
         
   
   
@@ -1135,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="PrivacyConcerns.html" class="md-nav__link">
+      <a href="../PrivacyConcerns/" class="md-nav__link">
         
   
   
@@ -1163,7 +1155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ServicePrograms.html" class="md-nav__link">
+      <a href="../ServicePrograms/" class="md-nav__link">
         
   
   
@@ -1191,7 +1183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ResourceAccessMonitor.html" class="md-nav__link">
+      <a href="../ResourceAccessMonitor/" class="md-nav__link">
         
   
   
@@ -1219,7 +1211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../PlusContent/TraceLog.html" class="md-nav__link">
+      <a href="../../PlusContent/TraceLog/" class="md-nav__link">
         
   
   
@@ -1247,7 +1239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="HowToUseWinDbg.html" class="md-nav__link">
+      <a href="../HowToUseWinDbg/" class="md-nav__link">
         
   
   
@@ -1604,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIEMessages.html" class="md-nav__link">
+      <a href="../SBIEMessages/" class="md-nav__link">
         
   
   
@@ -1632,7 +1624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIEDLLAPI.html" class="md-nav__link">
+      <a href="../SBIEDLLAPI/" class="md-nav__link">
         
   
   
@@ -1660,7 +1652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1101.html" class="md-nav__link">
+      <a href="../SBIE1101/" class="md-nav__link">
         
   
   
@@ -1688,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1102.html" class="md-nav__link">
+      <a href="../SBIE1102/" class="md-nav__link">
         
   
   
@@ -1716,7 +1708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1103.html" class="md-nav__link">
+      <a href="../SBIE1103/" class="md-nav__link">
         
   
   
@@ -1744,7 +1736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1104.html" class="md-nav__link">
+      <a href="../SBIE1104/" class="md-nav__link">
         
   
   
@@ -1772,7 +1764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1105.html" class="md-nav__link">
+      <a href="../SBIE1105/" class="md-nav__link">
         
   
   
@@ -1800,7 +1792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1106.html" class="md-nav__link">
+      <a href="../SBIE1106/" class="md-nav__link">
         
   
   
@@ -1828,7 +1820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1108.html" class="md-nav__link">
+      <a href="../SBIE1108/" class="md-nav__link">
         
   
   
@@ -1856,7 +1848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1109.html" class="md-nav__link">
+      <a href="../SBIE1109/" class="md-nav__link">
         
   
   
@@ -1884,7 +1876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1110.html" class="md-nav__link">
+      <a href="../SBIE1110/" class="md-nav__link">
         
   
   
@@ -1912,7 +1904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1111.html" class="md-nav__link">
+      <a href="../SBIE1111/" class="md-nav__link">
         
   
   
@@ -1940,7 +1932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1112.html" class="md-nav__link">
+      <a href="../SBIE1112/" class="md-nav__link">
         
   
   
@@ -1968,7 +1960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1113.html" class="md-nav__link">
+      <a href="../SBIE1113/" class="md-nav__link">
         
   
   
@@ -1996,7 +1988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1114.html" class="md-nav__link">
+      <a href="../SBIE1114/" class="md-nav__link">
         
   
   
@@ -2024,7 +2016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1116.html" class="md-nav__link">
+      <a href="../SBIE1116/" class="md-nav__link">
         
   
   
@@ -2052,7 +2044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1119.html" class="md-nav__link">
+      <a href="../SBIE1119/" class="md-nav__link">
         
   
   
@@ -2080,7 +2072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1120.html" class="md-nav__link">
+      <a href="../SBIE1120/" class="md-nav__link">
         
   
   
@@ -2108,7 +2100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1121.html" class="md-nav__link">
+      <a href="../SBIE1121/" class="md-nav__link">
         
   
   
@@ -2136,7 +2128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1122.html" class="md-nav__link">
+      <a href="../SBIE1122/" class="md-nav__link">
         
   
   
@@ -2164,7 +2156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1151.html" class="md-nav__link">
+      <a href="../SBIE1151/" class="md-nav__link">
         
   
   
@@ -2192,7 +2184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1152.html" class="md-nav__link">
+      <a href="../SBIE1152/" class="md-nav__link">
         
   
   
@@ -2220,7 +2212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1153.html" class="md-nav__link">
+      <a href="../SBIE1153/" class="md-nav__link">
         
   
   
@@ -2248,7 +2240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1201.html" class="md-nav__link">
+      <a href="../SBIE1201/" class="md-nav__link">
         
   
   
@@ -2276,7 +2268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1202.html" class="md-nav__link">
+      <a href="../SBIE1202/" class="md-nav__link">
         
   
   
@@ -2304,7 +2296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1203.html" class="md-nav__link">
+      <a href="../SBIE1203/" class="md-nav__link">
         
   
   
@@ -2332,7 +2324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1204.html" class="md-nav__link">
+      <a href="../SBIE1204/" class="md-nav__link">
         
   
   
@@ -2360,7 +2352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1211.html" class="md-nav__link">
+      <a href="../SBIE1211/" class="md-nav__link">
         
   
   
@@ -2388,7 +2380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1212.html" class="md-nav__link">
+      <a href="../SBIE1212/" class="md-nav__link">
         
   
   
@@ -2416,7 +2408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1213.html" class="md-nav__link">
+      <a href="../SBIE1213/" class="md-nav__link">
         
   
   
@@ -2444,7 +2436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1214.html" class="md-nav__link">
+      <a href="../SBIE1214/" class="md-nav__link">
         
   
   
@@ -2472,7 +2464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1215.html" class="md-nav__link">
+      <a href="../SBIE1215/" class="md-nav__link">
         
   
   
@@ -2500,7 +2492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1216.html" class="md-nav__link">
+      <a href="../SBIE1216/" class="md-nav__link">
         
   
   
@@ -2528,7 +2520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1222.html" class="md-nav__link">
+      <a href="../SBIE1222/" class="md-nav__link">
         
   
   
@@ -2556,7 +2548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1223.html" class="md-nav__link">
+      <a href="../SBIE1223/" class="md-nav__link">
         
   
   
@@ -2584,7 +2576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1224.html" class="md-nav__link">
+      <a href="../SBIE1224/" class="md-nav__link">
         
   
   
@@ -2612,7 +2604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1241.html" class="md-nav__link">
+      <a href="../SBIE1241/" class="md-nav__link">
         
   
   
@@ -2640,7 +2632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1242.html" class="md-nav__link">
+      <a href="../SBIE1242/" class="md-nav__link">
         
   
   
@@ -2668,7 +2660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1301.html" class="md-nav__link">
+      <a href="../SBIE1301/" class="md-nav__link">
         
   
   
@@ -2696,7 +2688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1303.html" class="md-nav__link">
+      <a href="../SBIE1303/" class="md-nav__link">
         
   
   
@@ -2724,7 +2716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1304.html" class="md-nav__link">
+      <a href="../SBIE1304/" class="md-nav__link">
         
   
   
@@ -2752,7 +2744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1306.html" class="md-nav__link">
+      <a href="../SBIE1306/" class="md-nav__link">
         
   
   
@@ -2780,7 +2772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1307.html" class="md-nav__link">
+      <a href="../SBIE1307/" class="md-nav__link">
         
   
   
@@ -2808,7 +2800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1308.html" class="md-nav__link">
+      <a href="../SBIE1308/" class="md-nav__link">
         
   
   
@@ -2836,7 +2828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1309.html" class="md-nav__link">
+      <a href="../SBIE1309/" class="md-nav__link">
         
   
   
@@ -2864,7 +2856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1310.html" class="md-nav__link">
+      <a href="../SBIE1310/" class="md-nav__link">
         
   
   
@@ -2892,7 +2884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1311.html" class="md-nav__link">
+      <a href="../SBIE1311/" class="md-nav__link">
         
   
   
@@ -2920,7 +2912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1312.html" class="md-nav__link">
+      <a href="../SBIE1312/" class="md-nav__link">
         
   
   
@@ -2948,7 +2940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1313.html" class="md-nav__link">
+      <a href="../SBIE1313/" class="md-nav__link">
         
   
   
@@ -2976,7 +2968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1314.html" class="md-nav__link">
+      <a href="../SBIE1314/" class="md-nav__link">
         
   
   
@@ -3004,7 +2996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1401.html" class="md-nav__link">
+      <a href="../SBIE1401/" class="md-nav__link">
         
   
   
@@ -3032,7 +3024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1402.html" class="md-nav__link">
+      <a href="../SBIE1402/" class="md-nav__link">
         
   
   
@@ -3060,7 +3052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1403.html" class="md-nav__link">
+      <a href="../SBIE1403/" class="md-nav__link">
         
   
   
@@ -3088,7 +3080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1404.html" class="md-nav__link">
+      <a href="../SBIE1404/" class="md-nav__link">
         
   
   
@@ -3116,7 +3108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1405.html" class="md-nav__link">
+      <a href="../SBIE1405/" class="md-nav__link">
         
   
   
@@ -3144,7 +3136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1406.html" class="md-nav__link">
+      <a href="../SBIE1406/" class="md-nav__link">
         
   
   
@@ -3172,7 +3164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1408.html" class="md-nav__link">
+      <a href="../SBIE1408/" class="md-nav__link">
         
   
   
@@ -3200,7 +3192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1409.html" class="md-nav__link">
+      <a href="../SBIE1409/" class="md-nav__link">
         
   
   
@@ -3228,7 +3220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1410.html" class="md-nav__link">
+      <a href="../SBIE1410/" class="md-nav__link">
         
   
   
@@ -3256,7 +3248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1411.html" class="md-nav__link">
+      <a href="../SBIE1411/" class="md-nav__link">
         
   
   
@@ -3284,7 +3276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE1412.html" class="md-nav__link">
+      <a href="../SBIE1412/" class="md-nav__link">
         
   
   
@@ -3312,7 +3304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2102.html" class="md-nav__link">
+      <a href="../SBIE2102/" class="md-nav__link">
         
   
   
@@ -3340,7 +3332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2103.html" class="md-nav__link">
+      <a href="../SBIE2103/" class="md-nav__link">
         
   
   
@@ -3368,7 +3360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2104.html" class="md-nav__link">
+      <a href="../SBIE2104/" class="md-nav__link">
         
   
   
@@ -3396,7 +3388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2108.html" class="md-nav__link">
+      <a href="../SBIE2108/" class="md-nav__link">
         
   
   
@@ -3424,7 +3416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2111.html" class="md-nav__link">
+      <a href="../SBIE2111/" class="md-nav__link">
         
   
   
@@ -3452,7 +3444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2191.html" class="md-nav__link">
+      <a href="../SBIE2191/" class="md-nav__link">
         
   
   
@@ -3480,7 +3472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2192.html" class="md-nav__link">
+      <a href="../SBIE2192/" class="md-nav__link">
         
   
   
@@ -3508,7 +3500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2193.html" class="md-nav__link">
+      <a href="../SBIE2193/" class="md-nav__link">
         
   
   
@@ -3536,7 +3528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2202.html" class="md-nav__link">
+      <a href="../SBIE2202/" class="md-nav__link">
         
   
   
@@ -3564,7 +3556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2203.html" class="md-nav__link">
+      <a href="../SBIE2203/" class="md-nav__link">
         
   
   
@@ -3592,7 +3584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2204.html" class="md-nav__link">
+      <a href="../SBIE2204/" class="md-nav__link">
         
   
   
@@ -3620,7 +3612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2205.html" class="md-nav__link">
+      <a href="../SBIE2205/" class="md-nav__link">
         
   
   
@@ -3648,7 +3640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2206.html" class="md-nav__link">
+      <a href="../SBIE2206/" class="md-nav__link">
         
   
   
@@ -3676,7 +3668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2207.html" class="md-nav__link">
+      <a href="../SBIE2207/" class="md-nav__link">
         
   
   
@@ -3704,7 +3696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2208.html" class="md-nav__link">
+      <a href="../SBIE2208/" class="md-nav__link">
         
   
   
@@ -3732,7 +3724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2209.html" class="md-nav__link">
+      <a href="../SBIE2209/" class="md-nav__link">
         
   
   
@@ -3760,7 +3752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2210.html" class="md-nav__link">
+      <a href="../SBIE2210/" class="md-nav__link">
         
   
   
@@ -3788,7 +3780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2211.html" class="md-nav__link">
+      <a href="../SBIE2211/" class="md-nav__link">
         
   
   
@@ -3816,7 +3808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2212.html" class="md-nav__link">
+      <a href="../SBIE2212/" class="md-nav__link">
         
   
   
@@ -3844,7 +3836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2213.html" class="md-nav__link">
+      <a href="../SBIE2213/" class="md-nav__link">
         
   
   
@@ -3872,7 +3864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2214.html" class="md-nav__link">
+      <a href="../SBIE2214/" class="md-nav__link">
         
   
   
@@ -3900,7 +3892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2217.html" class="md-nav__link">
+      <a href="../SBIE2217/" class="md-nav__link">
         
   
   
@@ -3928,7 +3920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2218.html" class="md-nav__link">
+      <a href="../SBIE2218/" class="md-nav__link">
         
   
   
@@ -3956,7 +3948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2219.html" class="md-nav__link">
+      <a href="../SBIE2219/" class="md-nav__link">
         
   
   
@@ -3984,7 +3976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2220.html" class="md-nav__link">
+      <a href="../SBIE2220/" class="md-nav__link">
         
   
   
@@ -4012,7 +4004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2221.html" class="md-nav__link">
+      <a href="../SBIE2221/" class="md-nav__link">
         
   
   
@@ -4040,7 +4032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2222.html" class="md-nav__link">
+      <a href="../SBIE2222/" class="md-nav__link">
         
   
   
@@ -4068,7 +4060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2223.html" class="md-nav__link">
+      <a href="../SBIE2223/" class="md-nav__link">
         
   
   
@@ -4096,7 +4088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2225.html" class="md-nav__link">
+      <a href="../SBIE2225/" class="md-nav__link">
         
   
   
@@ -4124,7 +4116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2303.html" class="md-nav__link">
+      <a href="../SBIE2303/" class="md-nav__link">
         
   
   
@@ -4152,7 +4144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2304.html" class="md-nav__link">
+      <a href="../SBIE2304/" class="md-nav__link">
         
   
   
@@ -4180,7 +4172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2305.html" class="md-nav__link">
+      <a href="../SBIE2305/" class="md-nav__link">
         
   
   
@@ -4208,7 +4200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2306.html" class="md-nav__link">
+      <a href="../SBIE2306/" class="md-nav__link">
         
   
   
@@ -4236,7 +4228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2307.html" class="md-nav__link">
+      <a href="../SBIE2307/" class="md-nav__link">
         
   
   
@@ -4264,7 +4256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2308.html" class="md-nav__link">
+      <a href="../SBIE2308/" class="md-nav__link">
         
   
   
@@ -4292,7 +4284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2309.html" class="md-nav__link">
+      <a href="../SBIE2309/" class="md-nav__link">
         
   
   
@@ -4320,7 +4312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2310.html" class="md-nav__link">
+      <a href="../SBIE2310/" class="md-nav__link">
         
   
   
@@ -4348,7 +4340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2311.html" class="md-nav__link">
+      <a href="../SBIE2311/" class="md-nav__link">
         
   
   
@@ -4376,7 +4368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2312.html" class="md-nav__link">
+      <a href="../SBIE2312/" class="md-nav__link">
         
   
   
@@ -4404,7 +4396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2313.html" class="md-nav__link">
+      <a href="../SBIE2313/" class="md-nav__link">
         
   
   
@@ -4432,7 +4424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2314.html" class="md-nav__link">
+      <a href="../SBIE2314/" class="md-nav__link">
         
   
   
@@ -4460,7 +4452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2315.html" class="md-nav__link">
+      <a href="../SBIE2315/" class="md-nav__link">
         
   
   
@@ -4488,7 +4480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2316.html" class="md-nav__link">
+      <a href="../SBIE2316/" class="md-nav__link">
         
   
   
@@ -4516,7 +4508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2317.html" class="md-nav__link">
+      <a href="../SBIE2317/" class="md-nav__link">
         
   
   
@@ -4544,7 +4536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2318.html" class="md-nav__link">
+      <a href="../SBIE2318/" class="md-nav__link">
         
   
   
@@ -4572,7 +4564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2321.html" class="md-nav__link">
+      <a href="../SBIE2321/" class="md-nav__link">
         
   
   
@@ -4600,7 +4592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2322.html" class="md-nav__link">
+      <a href="../SBIE2322/" class="md-nav__link">
         
   
   
@@ -4628,7 +4620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2323.html" class="md-nav__link">
+      <a href="../SBIE2323/" class="md-nav__link">
         
   
   
@@ -4656,7 +4648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2326.html" class="md-nav__link">
+      <a href="../SBIE2326/" class="md-nav__link">
         
   
   
@@ -4684,7 +4676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2327.html" class="md-nav__link">
+      <a href="../SBIE2327/" class="md-nav__link">
         
   
   
@@ -4712,7 +4704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2328.html" class="md-nav__link">
+      <a href="../SBIE2328/" class="md-nav__link">
         
   
   
@@ -4740,7 +4732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2329.html" class="md-nav__link">
+      <a href="../SBIE2329/" class="md-nav__link">
         
   
   
@@ -4768,7 +4760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2331.html" class="md-nav__link">
+      <a href="../SBIE2331/" class="md-nav__link">
         
   
   
@@ -4796,7 +4788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2332.html" class="md-nav__link">
+      <a href="../SBIE2332/" class="md-nav__link">
         
   
   
@@ -4824,7 +4816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE2334.html" class="md-nav__link">
+      <a href="../SBIE2334/" class="md-nav__link">
         
   
   
@@ -4852,7 +4844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE3207.html" class="md-nav__link">
+      <a href="../SBIE3207/" class="md-nav__link">
         
   
   
@@ -4880,7 +4872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE3208.html" class="md-nav__link">
+      <a href="../SBIE3208/" class="md-nav__link">
         
   
   
@@ -4908,7 +4900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE3209.html" class="md-nav__link">
+      <a href="../SBIE3209/" class="md-nav__link">
         
   
   
@@ -4936,7 +4928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE6004.html" class="md-nav__link">
+      <a href="../SBIE6004/" class="md-nav__link">
         
   
   
@@ -4964,7 +4956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE6008.html" class="md-nav__link">
+      <a href="../SBIE6008/" class="md-nav__link">
         
   
   
@@ -4992,7 +4984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE6009.html" class="md-nav__link">
+      <a href="../SBIE6009/" class="md-nav__link">
         
   
   
@@ -5020,7 +5012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9101.html" class="md-nav__link">
+      <a href="../SBIE9101/" class="md-nav__link">
         
   
   
@@ -5048,7 +5040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9153.html" class="md-nav__link">
+      <a href="../SBIE9153/" class="md-nav__link">
         
   
   
@@ -5076,7 +5068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9154.html" class="md-nav__link">
+      <a href="../SBIE9154/" class="md-nav__link">
         
   
   
@@ -5104,7 +5096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9156.html" class="md-nav__link">
+      <a href="../SBIE9156/" class="md-nav__link">
         
   
   
@@ -5132,7 +5124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9201.html" class="md-nav__link">
+      <a href="../SBIE9201/" class="md-nav__link">
         
   
   
@@ -5160,7 +5152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9202.html" class="md-nav__link">
+      <a href="../SBIE9202/" class="md-nav__link">
         
   
   
@@ -5188,7 +5180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9203.html" class="md-nav__link">
+      <a href="../SBIE9203/" class="md-nav__link">
         
   
   
@@ -5216,7 +5208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9204.html" class="md-nav__link">
+      <a href="../SBIE9204/" class="md-nav__link">
         
   
   
@@ -5244,7 +5236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9205.html" class="md-nav__link">
+      <a href="../SBIE9205/" class="md-nav__link">
         
   
   
@@ -5272,7 +5264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9206.html" class="md-nav__link">
+      <a href="../SBIE9206/" class="md-nav__link">
         
   
   
@@ -5300,7 +5292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9207.html" class="md-nav__link">
+      <a href="../SBIE9207/" class="md-nav__link">
         
   
   
@@ -5328,7 +5320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9208.html" class="md-nav__link">
+      <a href="../SBIE9208/" class="md-nav__link">
         
   
   
@@ -5356,7 +5348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9251.html" class="md-nav__link">
+      <a href="../SBIE9251/" class="md-nav__link">
         
   
   
@@ -5384,7 +5376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9252.html" class="md-nav__link">
+      <a href="../SBIE9252/" class="md-nav__link">
         
   
   
@@ -5412,7 +5404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9253.html" class="md-nav__link">
+      <a href="../SBIE9253/" class="md-nav__link">
         
   
   
@@ -5440,7 +5432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9302.html" class="md-nav__link">
+      <a href="../SBIE9302/" class="md-nav__link">
         
   
   
@@ -5468,7 +5460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9304.html" class="md-nav__link">
+      <a href="../SBIE9304/" class="md-nav__link">
         
   
   
@@ -5496,7 +5488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SBIE9305.html" class="md-nav__link">
+      <a href="../SBIE9305/" class="md-nav__link">
         
   
   
@@ -5539,7 +5531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="TechnicalAspects.html" class="md-nav__link">
+      <a href="../TechnicalAspects/" class="md-nav__link">
         
   
   
@@ -5576,7 +5568,7 @@
 
 
   
-    <a href="https://github.com/sandboxie-plus/sandboxie-docs/edit/main/docs/Content/RecoverFolder.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/sandboxie-plus/sandboxie-docs/edit/main/docs/Content/CopyNewer.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -5585,29 +5577,32 @@
     
       
     
-    <a href="https://github.com/sandboxie-plus/sandboxie-docs/raw/main/docs/Content/RecoverFolder.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/sandboxie-plus/sandboxie-docs/raw/main/docs/Content/CopyNewer.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="recover-folder">Recover Folder<a class="headerlink" href="#recover-folder" title="Permanent link"></a></h1>
-<p><em>RecoverFolder</em> is a sandbox setting in <a href="SandboxieIni.html">Sandboxie Ini</a>. It specifies the sandboxed folders that <a href="QuickRecovery.html">Quick Recovery</a> should examine. <a href="ShellFolders.html">Shell Folders</a> may be specified. For example:
+<h1 id="copy-newer">Copy Newer<a class="headerlink" href="#copy-newer" title="Permanent link"></a></h1>
+<p><em>CopyNewer</em> is a sandbox setting in <a href="../SandboxieIni/">Sandboxie Ini</a>, available since Sandboxie Plus 1.18.1. It specifies a list of file path patterns for which an existing sandbox copy of a file is refreshed when the matching file on the host has been modified more recently.</p>
+<p>Usage:</p>
 <div class="language-ini highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">   </span><span class="na">.</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">   </span><span class="na">.</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">   </span><span class="na">.</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">   </span><span class="k">[DefaultBox]</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">   </span><span class="na">RecoverFolder</span><span class="o">=</span><span class="s">%Personal%</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">   </span><span class="na">RecoverFolder</span><span class="o">=</span><span class="s">C:\Downloads</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">   </span><span class="k">[InstallBox]</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">   </span><span class="na">RecoverFolder</span><span class="o">=</span><span class="s">D:\Program Files</span>
-</span></code></pre></div></p>
-<p>The first two example settings specify that <a href="QuickRecovery.html">Quick Recovery</a> from the DefaultBox sandbox should look in the <em>Documents</em> and the <em>Downloads</em> folders in drive C.</p>
-<p>The third example setting specifies that QuickRecovery from the InstallBox sandbox should look in the <em>Program Files</em> folder in drive D.</p>
-<p>Note that when <a href="QuickRecovery.html">Quick Recovery</a> looks in the specified folder, it also looks in any folders within that folder, and any folders within those folders, for as many levels of depth as are needed.</p>
-<p>Since Sandboxie Plus 1.18.0, folder paths may contain the wildcards <code>*</code> (matches any number of characters), <code>?</code> (matches a single character), and <code>**</code> (matches any number of characters, including path separators). Paths are matched in their NT, DOS, and network-alias forms.</p>
-<p>Related <a href="SandboxieControl.html">Sandboxie Control</a> setting: <a href="RecoverySettings.html#quick-recovery">Sandbox Settings &gt; Recovery &gt; Quick Recovery</a></p>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">   </span><span class="na">CopyNewer</span><span class="o">=</span><span class="s">C:\Data\*.txt</span>
+</span></code></pre></div>
+<p>Normally, once a file has been copied into the sandbox (see <a href="../FileMigrationSettings/">File Migration Settings</a>), a sandboxed program keeps using that copy even if the original file on the host is changed later. When a file path matches a <em>CopyNewer</em> pattern, Sandboxie compares the last-write time of the host file with the sandboxed copy each time the file is opened; if the host file is newer, a fresh copy is migrated into the sandbox before the open completes.</p>
+<p>Please note the following limitations:</p>
+<ul>
+<li>It only applies to regular files that already have a copy inside the sandbox, when they are opened normally.</li>
+<li>It does not apply to the initial migration of a file, to directories, to write-only opens, to deleted files, or to create/overwrite operations.</li>
+<li>Pattern matching is case-insensitive and is applied to the host (true) file path.</li>
+<li>If a refresh is already in progress or fails, the existing sandbox copy remains available to the program.</li>
+</ul>
+<p>Copy rules, including rules of type "Copy newer", can be managed in SandMan under Sandbox Options &gt; General Options &gt; File Migration.</p>
+<p>Related <a href="../SandboxieIni/">Sandboxie Ini</a> settings: <a href="../CopyLimitKb/">CopyLimitKb</a>, <a href="../CopyLimitSilent/">CopyLimitSilent</a>. See also <a href="../FileMigrationSettings/">File Migration Settings</a>.</p>
 
 
 
@@ -5685,12 +5680,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="../material/assets/javascripts/extra.js"></script>
+        <script src="../../material/assets/javascripts/extra.js"></script>
       
     
   </body>

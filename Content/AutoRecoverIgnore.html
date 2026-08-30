@@ -5596,6 +5596,8 @@
 </span></code></pre></div>
 <p>The first example excludes from Immediate Recovery any files ending in <em>.part</em>. These files are created by the download manager of the Mozilla browsers, and represent incomplete downloads. When the download completes, the <em>.part</em> extension is removed from the file, thus making it eligible for Immediate Recovery. Note that <em>.part</em> is a default setting.</p>
 <p>The second and third examples exclude the specified folders from Immediate Recovery.</p>
+<p>Since Sandboxie Plus 1.18.0, entries may contain the wildcards <code>*</code> (matches any number of characters), <code>?</code> (matches a single character), and <code>**</code> (matches any number of characters, including path separators). Paths are matched in their NT, DOS, and network-alias forms.</p>
+<p>Since Sandboxie Plus 1.18.0, the exclusion list can also be applied to the <a href="QuickRecovery.html">Quick Recovery</a> window; see <a href="UseAutoRecoverIgnoreForQuick.html">UseAutoRecoverIgnoreForQuick</a>.</p>
 <p>Related <a href="SandboxieControl.html">Sandboxie Control</a> setting: <a href="RecoverySettings.html#immediate-recovery">Sandbox Settings &gt; Recovery &gt; Immediate Recovery</a></p>
 
 

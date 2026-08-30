@@ -5596,6 +5596,8 @@
 </span></code></pre></div>
 <p>第一个示例排除了所有以 .part 结尾的文件，使其不会被即时恢复功能处理。这类文件通常由 Mozilla 浏览器的下载管理器创建，表示未完成的下载。当下载完成后，文件的 .part 扩展名会被删除，此时文件将符合即时恢复的条件。需要注意的是，.part 是默认设置之一。</p>
 <p>第二和第三个示例将指定的文件夹从即时恢复范围中排除。</p>
+<p>自 Sandboxie Plus 1.18.0 起，条目可以包含通配符 <code>*</code>（匹配任意数量的字符）、<code>?</code>（匹配单个字符）和 <code>**</code>（匹配任意数量的字符，包括路径分隔符）。匹配时会同时涵盖路径的 NT、DOS 和网络别名形式。</p>
+<p>自 Sandboxie Plus 1.18.0 起，排除列表也可以应用于 <a href="../QuickRecovery/">快速恢复</a> 窗口；请参阅 <a href="../UseAutoRecoverIgnoreForQuick/">在快速恢复中应用自动恢复忽略</a>。</p>
 <p>相关的 <a href="../SandboxieControl/">Sandboxie控制</a> 设置：<a href="../RecoverySettings/#immediate-recovery">沙箱设置 &gt; 恢复 &gt; 即时恢复</a></p>
 
 

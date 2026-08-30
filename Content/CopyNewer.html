@@ -6,27 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="RecoverFolder is a sandbox setting in Sandboxie Ini. It specifies the sandboxed folders that Quick Recovery should examine. Shell Folders may be specified. For example:
-   .
-   .
-   .
-   [DefaultBox]
-   RecoverFolder=%Personal%
-   RecoverFolder=C:\Downloads
-   [InstallBox]
-   RecoverFolder=D:\Program Files">
+        <meta name="description" content="CopyNewer is a sandbox setting in Sandboxie Ini, available since Sandboxie Plus 1.18.1. It specifies a list of file path patterns for which an existing sandbox copy of a file is refreshed when the matching file on the host has been modified more recently.">
       
       
       
-        <link rel="canonical" href="https://sandboxie-plus.github.io/sandboxie-docs/Content/RecoverFolder.html">
+        <link rel="canonical" href="https://sandboxie-plus.github.io/sandboxie-docs/Content/CopyNewer.html">
       
       
       
       
         
-          <link rel="alternate" href="RecoverFolder.html" hreflang="en">
+          <link rel="alternate" href="CopyNewer.html" hreflang="en">
         
-          <link rel="alternate" href="../zh-CN/Content/RecoverFolder.html" hreflang="zh">
+          <link rel="alternate" href="../zh-CN/Content/CopyNewer.html" hreflang="zh">
         
       
       
@@ -35,7 +27,7 @@
     
     
       
-        <title>Recover Folder - Sandboxie Documentation</title>
+        <title>Copy Newer - Sandboxie Documentation</title>
       
     
     
@@ -82,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#recover-folder" class="md-skip">
+        <a href="#copy-newer" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Recover Folder
+              Copy Newer
             
           </span>
         </div>
@@ -174,13 +166,13 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="RecoverFolder.html" hreflang="en" class="md-select__link">
+            <a href="CopyNewer.html" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="../zh-CN/Content/RecoverFolder.html" hreflang="zh" class="md-select__link">
+            <a href="../zh-CN/Content/CopyNewer.html" hreflang="zh" class="md-select__link">
               简体中文
             </a>
           </li>
@@ -5576,7 +5568,7 @@
 
 
   
-    <a href="https://github.com/sandboxie-plus/sandboxie-docs/edit/main/docs/Content/RecoverFolder.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/sandboxie-plus/sandboxie-docs/edit/main/docs/Content/CopyNewer.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -5585,29 +5577,32 @@
     
       
     
-    <a href="https://github.com/sandboxie-plus/sandboxie-docs/raw/main/docs/Content/RecoverFolder.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/sandboxie-plus/sandboxie-docs/raw/main/docs/Content/CopyNewer.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="recover-folder">Recover Folder<a class="headerlink" href="#recover-folder" title="Permanent link"></a></h1>
-<p><em>RecoverFolder</em> is a sandbox setting in <a href="SandboxieIni.html">Sandboxie Ini</a>. It specifies the sandboxed folders that <a href="QuickRecovery.html">Quick Recovery</a> should examine. <a href="ShellFolders.html">Shell Folders</a> may be specified. For example:
+<h1 id="copy-newer">Copy Newer<a class="headerlink" href="#copy-newer" title="Permanent link"></a></h1>
+<p><em>CopyNewer</em> is a sandbox setting in <a href="SandboxieIni.html">Sandboxie Ini</a>, available since Sandboxie Plus 1.18.1. It specifies a list of file path patterns for which an existing sandbox copy of a file is refreshed when the matching file on the host has been modified more recently.</p>
+<p>Usage:</p>
 <div class="language-ini highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">   </span><span class="na">.</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">   </span><span class="na">.</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">   </span><span class="na">.</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">   </span><span class="k">[DefaultBox]</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">   </span><span class="na">RecoverFolder</span><span class="o">=</span><span class="s">%Personal%</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">   </span><span class="na">RecoverFolder</span><span class="o">=</span><span class="s">C:\Downloads</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">   </span><span class="k">[InstallBox]</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">   </span><span class="na">RecoverFolder</span><span class="o">=</span><span class="s">D:\Program Files</span>
-</span></code></pre></div></p>
-<p>The first two example settings specify that <a href="QuickRecovery.html">Quick Recovery</a> from the DefaultBox sandbox should look in the <em>Documents</em> and the <em>Downloads</em> folders in drive C.</p>
-<p>The third example setting specifies that QuickRecovery from the InstallBox sandbox should look in the <em>Program Files</em> folder in drive D.</p>
-<p>Note that when <a href="QuickRecovery.html">Quick Recovery</a> looks in the specified folder, it also looks in any folders within that folder, and any folders within those folders, for as many levels of depth as are needed.</p>
-<p>Since Sandboxie Plus 1.18.0, folder paths may contain the wildcards <code>*</code> (matches any number of characters), <code>?</code> (matches a single character), and <code>**</code> (matches any number of characters, including path separators). Paths are matched in their NT, DOS, and network-alias forms.</p>
-<p>Related <a href="SandboxieControl.html">Sandboxie Control</a> setting: <a href="RecoverySettings.html#quick-recovery">Sandbox Settings &gt; Recovery &gt; Quick Recovery</a></p>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">   </span><span class="na">CopyNewer</span><span class="o">=</span><span class="s">C:\Data\*.txt</span>
+</span></code></pre></div>
+<p>Normally, once a file has been copied into the sandbox (see <a href="FileMigrationSettings.html">File Migration Settings</a>), a sandboxed program keeps using that copy even if the original file on the host is changed later. When a file path matches a <em>CopyNewer</em> pattern, Sandboxie compares the last-write time of the host file with the sandboxed copy each time the file is opened; if the host file is newer, a fresh copy is migrated into the sandbox before the open completes.</p>
+<p>Please note the following limitations:</p>
+<ul>
+<li>It only applies to regular files that already have a copy inside the sandbox, when they are opened normally.</li>
+<li>It does not apply to the initial migration of a file, to directories, to write-only opens, to deleted files, or to create/overwrite operations.</li>
+<li>Pattern matching is case-insensitive and is applied to the host (true) file path.</li>
+<li>If a refresh is already in progress or fails, the existing sandbox copy remains available to the program.</li>
+</ul>
+<p>Copy rules, including rules of type "Copy newer", can be managed in SandMan under Sandbox Options &gt; General Options &gt; File Migration.</p>
+<p>Related <a href="SandboxieIni.html">Sandboxie Ini</a> settings: <a href="CopyLimitKb.html">CopyLimitKb</a>, <a href="CopyLimitSilent.html">CopyLimitSilent</a>. See also <a href="FileMigrationSettings.html">File Migration Settings</a>.</p>
 
 
 
