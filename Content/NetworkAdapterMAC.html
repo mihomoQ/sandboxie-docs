@@ -5602,7 +5602,7 @@
 <h2 id="identifying-network-adapter-index-values">Identifying Network Adapter Index Values<a class="headerlink" href="#identifying-network-adapter-index-values" title="Permanent link"></a></h2>
 <p>Sandboxie assigns index values only to adapters that have MAC addresses, in the order the system enumerates them. Virtual adapters without MAC addresses are skipped.</p>
 <p>To identify which adapters get which Sandboxie index values, get a rough list of adapters with MAC addresses (run in Command Prompt):
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="na">wmic path win32_networkadapter where &quot;MACAddress is not null&quot; get netconnectionid,name,macaddress</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="na">wmic path win32_networkadapter where "MACAddress is not null" get netconnectionid,name,macaddress</span>
 </span></code></pre></div></p>
 <p>Sandboxie assigns index values starting at 0 for the first adapter in this list, then 1, 2, 3, etc. However, Sandboxie's internal enumeration order may not match the command output order.</p>
 <p>For accurate mapping, use the testing method:</p>

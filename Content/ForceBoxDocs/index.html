@@ -5601,10 +5601,10 @@
 </ul>
 <p>This setting is useful when users open documents directly from boxed paths and you want the associated application to automatically start in the correct sandbox.</p>
 <p>Command-line examples:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&quot;C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE&quot; /n /dde &quot;C:\Sandbox\Alice\DefaultBox\drive\C\Docs\Report.docx&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>"C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE" /n /dde "C:\Sandbox\Alice\DefaultBox\drive\C\Docs\Report.docx"
 </span></code></pre></div>
 <p>Result: the file path points to <code>DefaultBox</code>, so the process is forced into <code>DefaultBox</code>.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&quot;C:\Windows\System32\notepad.exe&quot; &quot;C:\Users\Alice\Desktop\Notes.txt&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>"C:\Windows\System32\notepad.exe" "C:\Users\Alice\Desktop\Notes.txt"
 </span></code></pre></div>
 <p>Result: the file path is not inside a sandbox path, so <code>ForceBoxDocs</code> does not force the process.</p>
 <p>See also:</p>

@@ -5800,7 +5800,7 @@
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="na">typedef void *(__stdcall *P_SbieDll_Hook)(</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">                    </span><span class="na">const char *ApiName, void *ApiFunc, void *NewFunc);</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">            </span><span class="na">P_SbieDll_Hook p_SbieDll_Hook</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">GetProcAddress(hSbieDll, &quot;SbieDll_Hook&quot;)</span><span class="c1">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">            </span><span class="na">P_SbieDll_Hook p_SbieDll_Hook</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">GetProcAddress(hSbieDll, "SbieDll_Hook")</span><span class="c1">;</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="na">//</span>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="na">// invoke SbieDll_Hook through the function pointer</span>
@@ -6170,7 +6170,7 @@
 </span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>
 </span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="w">        </span><span class="na">setting_index [in] specifies the zero-based index number</span>
 </span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">        </span><span class="na">for a setting that may appear multiple times.  The index</span>
-</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="w">        </span><span class="na">number can be logically OR&#39;ed with these special values</span><span class="o">:</span>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="w">        </span><span class="na">number can be logically OR'ed with these special values</span><span class="o">:</span>
 </span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>
 </span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="w">            </span><span class="na">0x40000000 - do not scan the [GlobalSettings] section</span>
 </span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a><span class="w">            </span><span class="na">if the specified setting name does appear in the</span>
@@ -6217,12 +6217,12 @@
 <li>
 <p>Parameters:
 <div class="language-ini highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="w">        </span><span class="na">operation_code [in] specifies how to update the request setting</span><span class="o">:</span>
-</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">        </span><span class="na">&#39;s&#39; to set (overwrite), replacing any existing values</span>
-</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">        </span><span class="na">&#39;a&#39; to append the new value at the bottom of a list of values</span>
-</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">            </span><span class="na">(or simply set the new value if there isn&#39;t one already)</span>
-</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">        </span><span class="na">&#39;i&#39; to insert the new value at the top of a list of values</span>
-</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="w">            </span><span class="na">(or simply set the new value if there isn&#39;t one already)</span>
-</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="w">        </span><span class="na">&#39;d&#39; to delete an existing value in a list of values</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">        </span><span class="na">'s' to set (overwrite), replacing any existing values</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">        </span><span class="na">'a' to append the new value at the bottom of a list of values</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">            </span><span class="na">(or simply set the new value if there isn't one already)</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">        </span><span class="na">'i' to insert the new value at the top of a list of values</span>
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="w">            </span><span class="na">(or simply set the new value if there isn't one already)</span>
+</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="w">        </span><span class="na">'d' to delete an existing value in a list of values</span>
 </span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>
 </span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="w">        </span><span class="na">password [in] specifies the password to use if one is required,</span>
 </span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="w">        </span><span class="na">or NULL or an empty string otherwise.</span>
@@ -6235,10 +6235,10 @@
 </span><span id="__span-37-17"><a id="__codelineno-37-17" name="__codelineno-37-17" href="#__codelineno-37-17"></a>
 </span><span id="__span-37-18"><a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a><span class="w">        </span><span class="na">value [ini] is an optional parameter specifies the new value.</span>
 </span><span id="__span-37-19"><a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a>
-</span><span id="__span-37-20"><a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a><span class="w">        </span><span class="na">If operation_code is &#39;s&#39; and value is omitted, the corresponding</span>
+</span><span id="__span-37-20"><a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a><span class="w">        </span><span class="na">If operation_code is 's' and value is omitted, the corresponding</span>
 </span><span id="__span-37-21"><a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a><span class="w">        </span><span class="na">setting in the specified section will be deleted.</span>
 </span><span id="__span-37-22"><a id="__codelineno-37-22" name="__codelineno-37-22" href="#__codelineno-37-22"></a>
-</span><span id="__span-37-23"><a id="__codelineno-37-23" name="__codelineno-37-23" href="#__codelineno-37-23"></a><span class="w">        </span><span class="na">If operation_code is &#39;s&#39; and setting_name is &quot;*&quot; (wildcard star)</span>
+</span><span id="__span-37-23"><a id="__codelineno-37-23" name="__codelineno-37-23" href="#__codelineno-37-23"></a><span class="w">        </span><span class="na">If operation_code is 's' and setting_name is "*" (wildcard star)</span>
 </span><span id="__span-37-24"><a id="__codelineno-37-24" name="__codelineno-37-24" href="#__codelineno-37-24"></a><span class="w">        </span><span class="na">and value is omitted, this function deletes a complete section</span>
 </span><span id="__span-37-25"><a id="__codelineno-37-25" name="__codelineno-37-25" href="#__codelineno-37-25"></a><span class="w">        </span><span class="na">from the configuration file.</span>
 </span></code></pre></div></p>
@@ -6321,7 +6321,7 @@
 </span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>
 </span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a><span class="w">       </span><span class="na">BOOL __stdcall MyDeleteFileW(const WCHAR *Path)</span>
 </span><span id="__span-47-6"><a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a><span class="w">        </span><span class="na">{</span>
-</span><span id="__span-47-7"><a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a><span class="w">            </span><span class="na">if (Path[0]</span><span class="w"> </span><span class="o">=</span><span class="s">= L&#39;C&#39;) {</span>
+</span><span id="__span-47-7"><a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a><span class="w">            </span><span class="na">if (Path[0]</span><span class="w"> </span><span class="o">=</span><span class="s">= L'C') {</span>
 </span><span id="__span-47-8"><a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a>
 </span><span id="__span-47-9"><a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a><span class="w">                </span><span class="na">// silently ignore requests to delete any file on drive C</span>
 </span><span id="__span-47-10"><a id="__codelineno-47-10" name="__codelineno-47-10" href="#__codelineno-47-10"></a>
@@ -6338,8 +6338,8 @@
 </span><span id="__span-47-21"><a id="__codelineno-47-21" name="__codelineno-47-21" href="#__codelineno-47-21"></a>
 </span><span id="__span-47-22"><a id="__codelineno-47-22" name="__codelineno-47-22" href="#__codelineno-47-22"></a><span class="w">        </span><span class="na">main()</span>
 </span><span id="__span-47-23"><a id="__codelineno-47-23" name="__codelineno-47-23" href="#__codelineno-47-23"></a><span class="w">        </span><span class="na">{</span>
-</span><span id="__span-47-24"><a id="__codelineno-47-24" name="__codelineno-47-24" href="#__codelineno-47-24"></a><span class="w">            </span><span class="na">pDeleteFileW</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">GetProcAddress(kernel32dll, &quot;DeleteFileW&quot;)</span><span class="c1">;</span>
-</span><span id="__span-47-25"><a id="__codelineno-47-25" name="__codelineno-47-25" href="#__codelineno-47-25"></a><span class="w">            </span><span class="na">pDeleteFileW</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">SbieDll_Hook(&quot;DeleteFile&quot;,</span>
+</span><span id="__span-47-24"><a id="__codelineno-47-24" name="__codelineno-47-24" href="#__codelineno-47-24"></a><span class="w">            </span><span class="na">pDeleteFileW</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">GetProcAddress(kernel32dll, "DeleteFileW")</span><span class="c1">;</span>
+</span><span id="__span-47-25"><a id="__codelineno-47-25" name="__codelineno-47-25" href="#__codelineno-47-25"></a><span class="w">            </span><span class="na">pDeleteFileW</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">SbieDll_Hook("DeleteFile",</span>
 </span><span id="__span-47-26"><a id="__codelineno-47-26" name="__codelineno-47-26" href="#__codelineno-47-26"></a><span class="w">                                        </span><span class="na">pDeleteFileW,</span>
 </span><span id="__span-47-27"><a id="__codelineno-47-27" name="__codelineno-47-27" href="#__codelineno-47-27"></a><span class="w">                                        </span><span class="na">MyDeleteFileW);</span>
 </span><span id="__span-47-28"><a id="__codelineno-47-28" name="__codelineno-47-28" href="#__codelineno-47-28"></a><span class="w">        </span><span class="na">}</span>

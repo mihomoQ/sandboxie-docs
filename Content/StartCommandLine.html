@@ -5848,61 +5848,61 @@
 <hr />
 <h3 id="start-programs">Start Programs<a class="headerlink" href="#start-programs" title="Permanent link"></a></h3>
 <p>This is the default behavior. By specifying a full or partial path to a program's executable file, Sandboxie Start will launch that program under the supervision of Sandboxie:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  c:\windows\system32\notepad.exe</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  notepad.exe</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  c:\windows\system32\notepad.exe</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  notepad.exe</span>
 </span></code></pre></div></p>
 <p>Two special program names are allowed:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  default_browser</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  mail_agent</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  default_browser</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  mail_agent</span>
 </span></code></pre></div></p>
 <p>Sandboxie Start can also display the Run Any Program dialog window, or the Sandboxie Start Menu, depending on parameters specified:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  run_dialog</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  start_menu</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  run_dialog</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  start_menu</span>
 </span></code></pre></div></p>
 <p>In all forms, the parameter <em>/box:SandboxName</em> is applicable, and may be specified between Start.exe and the parameter, to indicate a sandbox name other than the default of <em>DefaultBox</em>. For example:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  /box:TestBox  run_dialog</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  /box:TestBox  run_dialog</span>
 </span></code></pre></div></p>
 <p>A special form of the /box parameter is <em>/box:__ask__</em> and causes Start.exe to display the sandbox selection dialog box.</p>
 <p>The parameter <em>/silent</em> can be used to eliminate some pop-up error messages. For example:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  /silent  no_such_program.exe</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  /silent  no_such_program.exe</span>
 </span></code></pre></div></p>
 <p>In both silent and normal operation, Start.exe exits with a zero exit code on success, or non-zero on failure. In batch files, the exit code can be examined using the <em>IF ERRORLEVEL</em> condition.</p>
 <p>The parameter <em>/elevate</em> can be used to run a program with Administrator privileges on a system where User Account Control (UAC) is enabled. For example:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  /elevate cmd.exe</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  /elevate cmd.exe</span>
 </span></code></pre></div></p>
 <p>The parameter <em>/env</em> can be used to pass an environment variable:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  /env:VariableName=VariableValueWithoutSpace</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="na">&quot;C:\Program Files\Sandboxie\Start.exe&quot;  /env:VariableName</span><span class="o">=</span><span class="s">&quot;Variable Value With Spaces&quot;</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  /env:VariableName=VariableValueWithoutSpace</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="na">"C:\Program Files\Sandboxie\Start.exe"  /env:VariableName</span><span class="o">=</span><span class="s">"Variable Value With Spaces"</span>
 </span></code></pre></div></p>
 <p>The parameter <em>/hide_window</em> can be used to signal that the starting program should not display its window:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  /hide_window cmd.exe /c automated_script.bat</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  /hide_window cmd.exe /c automated_script.bat</span>
 </span></code></pre></div></p>
 <p>The parameter <em>/wait</em> can be used to run a program, wait for it to finish, and return the exit status from the program:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  /wait cmd.exe</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  /wait cmd.exe</span>
 </span></code></pre></div></p>
 <p>Note that Start.exe is a Win32 application and not a console application, so the system "start" command is useful here to force the system to wait for Start.exe to finish:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">  </span><span class="na">start /wait &quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot; /wait cmd /c exit 9</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">  </span><span class="na">start /wait "C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe" /wait cmd /c exit 9</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="na">echo %ERRORLEVEL%</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="na">9</span>
 </span></code></pre></div></p>
 <p>The system waits for Start.exe to finish, which in turn waits for "cmd /c exit 9" to finish, and then the exit status 9 is returned all the way back.</p>
 <p>Parameters can be combined in any order. For example:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">   </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  /box:CustomBox /silent MyProgram.exe</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">   </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  /box:CustomBox /silent MyProgram.exe</span>
 </span></code></pre></div></p>
 <h3 id="stop-programs">Stop Programs<a class="headerlink" href="#stop-programs" title="Permanent link"></a></h3>
 <p>Terminate all programs running in a particular sandbox. Note that the request is transmitted to the Sandboxie service SbieSvc, which actually carries out the termination.
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  /terminate</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  /box:TestBox  /terminate</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  /terminate_all</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  /terminate</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  /box:TestBox  /terminate</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  /terminate_all</span>
 </span></code></pre></div></p>
 <p>If the parameter <em>/box:SandboxName</em> is omitted, programs running in the default sandbox, <em>DefaultBox</em>, will be stopped.</p>
 <p>The form <em>/terminate_all</em> terminates all programs in all sandboxes.</p>
 <hr />
 <h3 id="unmount-box-images">Unmount Box Images<a class="headerlink" href="#unmount-box-images" title="Permanent link"></a></h3>
 <p>These commands unmount encrypted box images or RAM disks created by Sandboxie Plus. These parameters are available since v1.11.0 / 5.66.0.
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie-Plus\Start.exe&quot;  /unmount</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie-Plus\Start.exe&quot;  /box:EncryptedBox  /unmount</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie-Plus\Start.exe&quot;  /unmount_all</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie-Plus\Start.exe"  /unmount</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie-Plus\Start.exe"  /box:EncryptedBox  /unmount</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie-Plus\Start.exe"  /unmount_all</span>
 </span></code></pre></div></p>
 <p>If the parameter <em>/box:SandboxName</em> is omitted, default sandbox, <em>DefaultBox</em> image, will be unmounted.</p>
 <p>The form <em>/unmount_all</em> terminates all programs in all encrypted sandboxes and unmounts all encrypted box images, including RAM disks created by Sandboxie Plus.</p>
@@ -5912,22 +5912,22 @@
 <p>When using <code>/key:password</code> parameter with <code>Start.exe</code>, the password will be visible in command line history, process lists, and potentially event logs. Use this parameter only in secure environments or consider interactive password prompts instead.</p>
 </div>
 <p>These commands mount encrypted box images created by Sandboxie Plus. These parameters are available since v1.11.0 / 5.66.0.
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie-Plus\Start.exe&quot;  /key:[box image password] /mount_protected</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie-Plus\Start.exe&quot;  /key:[box image password] /mount</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie-Plus\Start.exe&quot;  /box:EncryptedBox  /key:[box image password] /mount_protected</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie-Plus\Start.exe&quot;  /box:EncryptedBox  /key:[box image password] /mount</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie-Plus\Start.exe"  /key:[box image password] /mount_protected</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie-Plus\Start.exe"  /key:[box image password] /mount</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie-Plus\Start.exe"  /box:EncryptedBox  /key:[box image password] /mount_protected</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie-Plus\Start.exe"  /box:EncryptedBox  /key:[box image password] /mount</span>
 </span></code></pre></div></p>
 <p>If the parameter <em>/box:SandboxName</em> is omitted, default sandbox, <em>DefaultBox</em> image, will be mounted.</p>
 <p>The form <em>/mount_protected</em> mounts encrypted box images with the <em>Box Root Protection</em>. <em>Box Root Protection</em> prevents processes running outside the sandbox from accessing the root folder of the encrypted box.</p>
 <hr />
 <h3 id="list-programs">List Programs<a class="headerlink" href="#list-programs" title="Permanent link"></a></h3>
 <p>List the system process ID numbers for all programs running in a particular sandbox.
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  /listpids</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  /box:TestBox  /listpids</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  /listpids</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  /box:TestBox  /listpids</span>
 </span></code></pre></div></p>
 <p>If the parameter <em>/box:SandboxName</em> is omitted, programs running in the default sandbox, <em>DefaultBox</em>, will be listed.</p>
 <p>The output is formatted as one number per line. The first line contains the number of programs, followed by one process ID per line. Example output:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="w">    </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  /listpids | more</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="w">    </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  /listpids | more</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="na">3</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="na">3036</span>
 </span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="na">2136</span>
@@ -5936,8 +5936,8 @@
 <p>Note that Start.exe is not a console applications, so the output does not appear in a command prompt window unless you pipe the output using a construct such as <code>| more</code>.</p>
 <hr />
 <h3 id="delete-contents-of-sandbox">Delete Contents of Sandbox<a class="headerlink" href="#delete-contents-of-sandbox" title="Permanent link"></a></h3>
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  delete_sandbox</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  delete_sandbox_silent</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  delete_sandbox</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  delete_sandbox_silent</span>
 </span></code></pre></div>
 <p>The <em>/box:SandboxName</em> parameter may be specified between Start.exe and the delete command.</p>
 <p>The __silent_ suffix on the delete command, indicates Sandboxie Start should silently ignore any errors and not display any error messages.</p>
@@ -5963,26 +5963,26 @@
 </li>
 </ul>
 <p>Issuing the <em>delete_sandbox</em> command causes Start.exe to invoke phase 1 followed by phase 2. Start.exe also accepts these commands to invoke a specific phase:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  delete_sandbox_phase1</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  delete_sandbox_phase2</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  delete_sandbox_silent_phase1</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  delete_sandbox_silent_phase2</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  delete_sandbox_phase1</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  delete_sandbox_phase2</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  delete_sandbox_silent_phase1</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  delete_sandbox_silent_phase2</span>
 </span></code></pre></div></p>
 <hr />
 <h3 id="reload-configuration">Reload Configuration<a class="headerlink" href="#reload-configuration" title="Permanent link"></a></h3>
 <p>This command reloads the Sandboxie configuration in SandboxieIni into the active Sandboxie driver. Typically useful after manually editing the Sandboxie.ini file.
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  /reload</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  /reload</span>
 </span></code></pre></div></p>
 <p>Note that reloading the configuration does not take effect on sandboxed programs that are already running when this command is issued.</p>
 <hr />
 <h3 id="disable-forced-programs">Disable Forced Programs<a class="headerlink" href="#disable-forced-programs" title="Permanent link"></a></h3>
 <p>The following command runs a program outside the sandbox, even if the program is forced. It is similar to using the Run Outside Sandbox option from the sandbox selection window of the Run Sandboxed command.
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  /dfp            c:\path\to\program.exe</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  /disable_force  c:\path\to\program.exe</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  /dfp            c:\path\to\program.exe</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  /disable_force  c:\path\to\program.exe</span>
 </span></code></pre></div></p>
 <p>Note that /dfp and /disable_force are identical. You can also select this option by holding the Ctrl and Shift keys down when you click the Run Sandboxed command.</p>
 <p>An older form of this command can temporarily disable the forced programs mode, for all programs. It is similar in function to using the Disable Forced Programs command from the <a href="TrayIconMenu.html#disable-forced-programs">Tray Icon Menu</a> in Sandboxie Control (and not the <a href="FileMenu.html#disable-forced-programs">File Menu</a>).
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="w">  </span><span class="na">&quot;C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe&quot;  disable_force</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="w">  </span><span class="na">"C</span><span class="o">:</span><span class="s">\Program Files\Sandboxie\Start.exe"  disable_force</span>
 </span></code></pre></div></p>
 <p>Note the missing slash in this command syntax. Note also that this command is not a toggle. It always puts the Disable Forced Programs mode into effect and always restarts the countdown timer. At this time, Start.exe does not offer a way to request the cancellation of this mode.</p>
 <hr />
@@ -6019,42 +6019,42 @@
 <li>If retries are exhausted and the program keeps exiting with non-zero codes, Start.exe will stop retrying and return the last non-zero exit code.</li>
 </ul>
 <p>Example:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="na">&quot;Start.exe&quot; /keep_alive notepad.exe</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="na">&quot;Start.exe&quot; Start.exe /keep_alive notepad.exe</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="na">"Start.exe" /keep_alive notepad.exe</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="na">"Start.exe" Start.exe /keep_alive notepad.exe</span>
 </span></code></pre></div>
 This is useful when you want the started program to remain available inside the box (restarted after crashes) and also keep Start.exe as the supervising parent process for the session.</p>
 <h4 id="fake_admin">/fake_admin<a class="headerlink" href="#fake_admin" title="Permanent link"></a></h4>
 <p>Mark the started program as having a faked Administrator context inside the sandbox. This can help some installers or legacy programs that detect administrator state and behave differently. This is a sandbox-side compatibility measure and is not the same as a real UAC elevation.</p>
 <p>Example:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="na">&quot;Start.exe&quot; /fake_admin setup.exe</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="na">"Start.exe" /fake_admin setup.exe</span>
 </span></code></pre></div></p>
 <h4 id="force_children-or-fcp">/force_children (or /fcp)<a class="headerlink" href="#force_children-or-fcp" title="Permanent link"></a></h4>
 <p>Mark the started process so that any child processes it creates will be forced into the specified sandbox. It does not, by itself, place the initially started program (e.g. the installer) into the sandbox. Start.exe issues an API call to force children when this option is present.</p>
 <p>Example:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="na">&quot;Start.exe&quot; /fcp myinstaller.exe</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="na">&quot;Start.exe&quot; /force_children myinstaller.exe</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="na">"Start.exe" /fcp myinstaller.exe</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="na">"Start.exe" /force_children myinstaller.exe</span>
 </span></code></pre></div></p>
 <h4 id="envrefresh">/env:=Refresh<a class="headerlink" href="#envrefresh" title="Permanent link"></a></h4>
 <p>Trigger an environment refresh for the currently boxed process. When invoked from a boxed instance Start.exe calls an internal <code>Env_Refresh</code> helper; when run outside a sandbox it has no effect. Use <code>/env:Name=Value</code> to set individual environment variables instead.</p>
 <p>Example:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="na">&quot;Start.exe&quot; /env</span><span class="o">:</span><span class="s">=Refresh</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="na">"Start.exe" /env</span><span class="o">:</span><span class="s">=Refresh</span>
 </span></code></pre></div></p>
 <h4 id="uac_prompt">/uac_prompt<a class="headerlink" href="#uac_prompt" title="Permanent link"></a></h4>
 <p>Invoke Sandboxie's secure UAC prompt UI (the boxed UAC dialog) with parameters. This is primarily an internal helper used by other Sandboxie components to display a secure UAC prompt. The command accepts internal parameters used to populate the dialog (typically generated by service/agent code).</p>
 <p>Example:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="na">&quot;Start.exe&quot; uac_prompt &lt;internal-pkt-params&gt;</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="na">"Start.exe" uac_prompt &lt;internal-pkt-params&gt;</span>
 </span></code></pre></div></p>
 <h4 id="mount_hive">mount_hive<a class="headerlink" href="#mount_hive" title="Permanent link"></a></h4>
 <p>Request the sandboxed instance to mount a registry hive copy for access by boxed programs. When invoked outside the sandbox Start.exe forwards the command to the boxed instance so the boxed instance performs the mount; when invoked inside the sandbox the mount is performed directly.</p>
 <p>Example:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="na">&quot;Start.exe&quot; mount_hive</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="na">"Start.exe" mount_hive</span>
 </span></code></pre></div></p>
 <h4 id="run_sbie_ctrl-and-open_agentparam">run_sbie_ctrl and open_agent[:param]<a class="headerlink" href="#run_sbie_ctrl-and-open_agentparam" title="Permanent link"></a></h4>
 <p>Internal service control commands used to ask the Sandboxie service/agent to run Sandboxie Agent or perform agent tasks. <code>run_sbie_ctrl</code> sends a request to the service to launch the Agent UI. <code>open_agent:</code> can pass an argument to the agent/service. These are primarily used by helper tooling and automation.</p>
 <p>Example:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="na">&quot;Start.exe&quot; run_sbie_ctrl</span>
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="na">&quot;Start.exe&quot; open_agent</span><span class="o">:</span><span class="s">SandMan.exe</span>
-</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="na">&quot;Start.exe&quot; open_agent</span><span class="o">:</span><span class="s">&quot;SandMan.exe -autorun&quot;</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="na">"Start.exe" run_sbie_ctrl</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="na">"Start.exe" open_agent</span><span class="o">:</span><span class="s">SandMan.exe</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="na">"Start.exe" open_agent</span><span class="o">:</span><span class="s">"SandMan.exe -autorun"</span>
 </span></code></pre></div></p>
 <hr />
 <h3 id="related-reading-material">Related Reading Material<a class="headerlink" href="#related-reading-material" title="Permanent link"></a></h3>

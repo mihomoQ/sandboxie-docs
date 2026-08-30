@@ -5594,7 +5594,7 @@
 <p>Clicking the <em>Close</em> button closes the window.</p>
 <h2 id="log-messages-to-a-file">Log Messages To A File<a class="headerlink" href="#log-messages-to-a-file" title="Permanent link"></a></h2>
 <p>It's possible to log <em>Messages From Sandboxie</em> to a file with a simple configuration inside the registry:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="na">reg.exe add &quot;HKLM\SYSTEM\CurrentControlSet\Services\SbieSvc&quot; /t REG_SZ /v LogFile /d &quot;2;C</span><span class="o">:</span><span class="s">\Windows\System32\LogFiles\Sandboxie.log&quot; /f</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="na">reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\SbieSvc" /t REG_SZ /v LogFile /d "2;C</span><span class="o">:</span><span class="s">\Windows\System32\LogFiles\Sandboxie.log" /f</span>
 </span></code></pre></div>
 The <code>LogFile</code> value consists of two pieces of information:</p>
 <ul>
@@ -5613,8 +5613,8 @@ The <code>LogFile</code> value consists of two pieces of information:</p>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="na">2022-09-02 01</span><span class="o">:</span><span class="s">04:18 SBIE1308 Program cannot start due to restrictions - HelpPane.exe [ChromeBox] (DESKTOP-RZ4242\administrator)</span>
 </span></code></pre></div></p>
 <p>Another registry key allows to filter and split logs on specific messages:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="na">reg.exe add &quot;HKLM\SYSTEM\CurrentControlSet\Services\SbieSvc&quot; /t REG_SZ /v LogFile /d &quot;2;C</span><span class="o">:</span><span class="s">\Windows\System32\LogFiles\Sandboxie.log&quot; /f</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">reg.exe add &quot;HKLM\SYSTEM\CurrentControlSet\Services\SbieSvc&quot; /t REG_SZ /v MultiLog /d &quot;1308,1307&quot; /f</span>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="na">reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\SbieSvc" /t REG_SZ /v LogFile /d "2;C</span><span class="o">:</span><span class="s">\Windows\System32\LogFiles\Sandboxie.log" /f</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\SbieSvc" /t REG_SZ /v MultiLog /d "1308,1307" /f</span>
 </span></code></pre></div>
 This simple configuration will:</p>
 <ul>

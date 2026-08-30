@@ -5601,10 +5601,10 @@
 </ul>
 <p>当用户直接从沙箱路径打开文档，并希望相关应用程序能够自动在正确的沙箱中启动时，此设置十分有用</p>
 <p>命令行示例：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&quot;C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE&quot; /n /dde &quot;C:\Sandbox\Alice\DefaultBox\drive\C\Docs\Report.docx&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>"C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE" /n /dde "C:\Sandbox\Alice\DefaultBox\drive\C\Docs\Report.docx"
 </span></code></pre></div>
 <p>结果：该文件路径指向 <code>DefaultBox</code>，因此进程会被强制运行在 <code>DefaultBox</code> 中</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&quot;C:\Windows\System32\notepad.exe&quot; &quot;C:\Users\Alice\Desktop\Notes.txt&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>"C:\Windows\System32\notepad.exe" "C:\Users\Alice\Desktop\Notes.txt"
 </span></code></pre></div>
 <p>结果：该文件路径不在沙箱路径下，因此 <code>ForceBoxDocs</code> 不会强制进程进入沙箱</p>
 <p>另请参见：</p>
