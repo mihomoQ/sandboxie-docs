@@ -175,10 +175,10 @@ class TermCheckTests(unittest.TestCase):
         self.commit()
         result = run(self.base)
         self.assertEqual(result.returncode, 1)
-        self.assertIn("::error file=docs/zh-CN/Content/Test.md,line=1::", result.stdout)
+        self.assertIn("::error file=docs/zh-CN/Content/Test.md,line=1::", result.stdout)  # codespell:ignore assertin
         result = run("missing-revision")
         self.assertEqual(result.returncode, 2)
-        self.assertIn("::error::Unable to check", result.stdout)
+        self.assertIn("::error::Unable to check", result.stdout)  # codespell:ignore assertin
 
 
 if __name__ == "__main__":
