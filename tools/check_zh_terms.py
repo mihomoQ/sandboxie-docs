@@ -9,7 +9,8 @@ import subprocess
 import sys
 
 
-TERMS = re.compile("沙箱|沙盘")
+# Match manager names first so their shorter 'sandbox' terms are not reported twice.
+TERMS = re.compile("沙[盘盒箱]管理器|沙箱|沙盘")
 HUNK = re.compile(r"^@@ -\d+(?:,\d+)? \+(\d+)(?:,(\d+))? @@")
 
 
@@ -18,6 +19,19 @@ class Violation:
     path: str
     line: int
     term: str
+
+    @property
+    def severity(self) -> str:
+        return "warning" if self.term.endswith("管理器") else "error"
+
+    @property
+    def message(self) -> str:
+        if self.severity == "warning":
+            return (
+                f"Check '{self.term}' in context: use 'SandMan' for the Sandboxie Plus UI "
+                "or 'Sandboxie Control' for the Classic UI. Exact UI label quotations may be kept."
+            )
+        return f"Use '沙盒' instead of '{self.term}' in Simplified Chinese documentation."
 
 
 def git(repo: Path, *args: str) -> str:
@@ -93,10 +107,10 @@ def escape_command(value: str, *, property_value: bool = False) -> str:
     return value
 
 
-def github_error(violation: Violation) -> str:
+def github_annotation(violation: Violation) -> str:
     path = escape_command(violation.path, property_value=True)
-    message = escape_command(f"Use '沙盒' instead of '{violation.term}' in Simplified Chinese documentation.")
-    return f"::error file={path},line={violation.line}::{message}"
+    message = escape_command(violation.message)
+    return f"::{violation.severity} file={path},line={violation.line}::{message}"
 
 
 def main() -> int:
@@ -118,13 +132,15 @@ def main() -> int:
 
     for violation in violations:
         if args.github_actions:
-            print(github_error(violation))
+            print(github_annotation(violation))
         else:
-            print(f"{violation.path}:{violation.line}: use '沙盒' instead of '{violation.term}'")
+            print(f"{violation.path}:{violation.line}: {violation.severity}: {violation.message}")
     if violations:
-        print(f"Found {len(violations)} deprecated term(s) in added Simplified Chinese lines.")
-        return 1
-    print("No deprecated terms in added Simplified Chinese lines.")
+        errors = sum(violation.severity == "error" for violation in violations)
+        warnings = len(violations) - errors
+        print(f"Found {errors} error(s) and {warnings} warning(s) in added Simplified Chinese lines.")
+        return 1 if errors else 0
+    print("No terminology issues in added Simplified Chinese lines.")
     return 0
 
 

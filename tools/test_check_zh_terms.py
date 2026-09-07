@@ -9,7 +9,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from check_zh_terms import Violation, check, github_error, is_target
+from check_zh_terms import Violation, check, github_annotation, is_target
 
 
 class TermCheckTests(unittest.TestCase):
@@ -65,12 +65,47 @@ class TermCheckTests(unittest.TestCase):
         path = "docs/zh-CN/Content/中文 [one] file.md"
         self.write(path, "沙盒、磁盘和工具箱\n沙箱中的沙箱\n沙盘中的沙盒\n")
         self.write("docs/zh-CN/Content/中文 o file.md", "沙盒\n")
-        self.write("docs/Content/English.md", "沙箱\n")
-        self.write("docs/zh-TW/Example.md", "沙箱\n")
+        self.write("docs/Content/English.md", "沙箱\n沙盒管理器\n")
+        self.write("docs/zh-TW/Example.md", "沙箱\n沙盤管理器\n沙箱管理器\n")
         self.commit()
         self.assertEqual(check(self.repo, self.base), [
             Violation(path, 2, "沙箱"), Violation(path, 3, "沙盘"),
         ])
+
+    def test_manager_names_receive_context_warning_without_duplicate_terms(self):
+        path = "docs/zh-CN/Content/Managers.md"
+        terms = ("沙盘管理器", "沙盒管理器", "沙箱管理器")
+        self.write(path, "\n".join(terms) + "\n")
+        self.commit()
+        findings = check(self.repo, self.base)
+        self.assertEqual(findings, [
+            Violation(path, line, term) for line, term in enumerate(terms, 1)
+        ])
+        for finding in findings:
+            with self.subTest(term=finding.term):
+                self.assertEqual(finding.severity, "warning")
+                self.assertTrue("SandMan" in finding.message)
+                self.assertTrue("Sandboxie Plus" in finding.message)
+                self.assertTrue("Sandboxie Control" in finding.message)
+                self.assertTrue("Classic" in finding.message)
+                self.assertTrue("Exact UI label quotations may be kept" in finding.message)
+
+    def test_manager_names_do_not_hide_standalone_deprecated_terms(self):
+        path = "docs/zh-CN/Content/Mixed.md"
+        self.write(path, "沙盘管理器、沙箱管理器、沙盘、沙箱\n")
+        self.commit()
+        findings = check(self.repo, self.base)
+        self.assertEqual(findings, [
+            Violation(path, 1, term) for term in ("沙盘", "沙盘管理器", "沙箱", "沙箱管理器")
+        ])
+        self.assertEqual([finding.severity for finding in findings], [
+            "error", "warning", "error", "warning",
+        ])
+
+    def test_canonical_manager_names_are_accepted(self):
+        self.write("docs/zh-CN/Content/Managers.md", "SandMan\nSandboxie Control\n沙盒\n")
+        self.commit()
+        self.assertEqual(check(self.repo, self.base), [])
 
     def test_both_readmes_are_checked(self):
         self.write("README_zh-CN.md", "沙箱\n")
@@ -83,20 +118,20 @@ class TermCheckTests(unittest.TestCase):
 
     def test_unchanged_legacy_line_is_ignored_but_edited_line_is_checked(self):
         path = "docs/zh-CN/Content/Example.md"
-        self.write(path, "沙箱。\n原有内容\n")
+        self.write(path, "沙箱。\n沙盒管理器\n原有内容\n")
         base = self.commit()
-        self.write(path, "沙箱。\n原有内容\n新增沙盒说明\n")
+        self.write(path, "沙箱。\n沙盒管理器\n原有内容\n新增沙盒说明\n")
         self.commit()
         self.assertEqual(check(self.repo, base), [])
-        self.write(path, "沙箱！\n原有内容\n新增沙盒说明\n")
+        self.write(path, "沙箱！\n沙盒管理器\n原有内容\n新增沙盒说明\n")
         self.commit()
         self.assertEqual(check(self.repo, base), [Violation(path, 1, "沙箱")])
 
     def test_deleted_file_and_removed_line_are_ignored(self):
         removed = "docs/zh-CN/Content/Removed.md"
         kept = "docs/zh-CN/Content/Kept.md"
-        self.write(removed, "沙箱\n")
-        self.write(kept, "沙盘\n保留内容\n")
+        self.write(removed, "沙箱\n沙箱管理器\n")
+        self.write(kept, "沙盘\n沙盒管理器\n保留内容\n")
         base = self.commit()
         (self.repo / removed).unlink()
         self.write(kept, "保留内容\n")
@@ -154,31 +189,56 @@ class TermCheckTests(unittest.TestCase):
         self.assertEqual(check(self.repo, self.base), [Violation(path, 1501, "沙箱")])
 
     def test_github_annotation_escapes_control_characters(self):
-        result = github_error(Violation("docs/zh-CN/a%,:\r\n::error.md", 7, "沙箱"))
+        result = github_annotation(Violation("docs/zh-CN/a%,:\r\n::error.md", 7, "沙箱"))
         self.assertEqual(result, "::error file=docs/zh-CN/a%25%2C%3A%0D%0A%3A%3Aerror.md,line=7::"
                          "Use '沙盒' instead of '沙箱' in Simplified Chinese documentation.")
+        warning = Violation("docs/zh-CN/a%,:\r\n::warning.md", 8, "沙盒管理器")
+        self.assertEqual(github_annotation(warning),
+                         "::warning file=docs/zh-CN/a%25%2C%3A%0D%0A%3A%3Awarning.md,line=8::"
+                         + warning.message)
 
     def test_cli_exit_status_and_annotations(self):
         script = self.repo / "tools" / "check_zh_terms.py"
         script.parent.mkdir()
         shutil.copyfile(Path(__file__).with_name("check_zh_terms.py"), script)
 
-        def run(base):
+        def run(base, annotations):
             return subprocess.run(
-                [sys.executable, str(script), "--base", base, "--github-actions"],
+                [sys.executable, str(script), "--base", base]
+                + (["--github-actions"] if annotations else []),
                 env={**self.env, "PYTHONIOENCODING": "utf-8"},
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding="utf-8",
             )
 
-        self.assertEqual(run(self.base).returncode, 0)
-        self.write("docs/zh-CN/Content/Test.md", "沙盘\n")
-        self.commit()
-        result = run(self.base)
-        self.assertEqual(result.returncode, 1)
-        self.assertIn("::error file=docs/zh-CN/Content/Test.md,line=1::", result.stdout)  # codespell:ignore assertin
-        result = run("missing-revision")
-        self.assertEqual(result.returncode, 2)
-        self.assertIn("::error::Unable to check", result.stdout)  # codespell:ignore assertin
+        path = "docs/zh-CN/Content/Test.md"
+        cases = (
+            ("SandMan\n", 0, ()),
+            ("沙盒管理器\n", 0, (("warning", 1),)),
+            ("沙盘\n", 1, (("error", 1),)),
+            ("沙箱管理器\n沙箱\n", 1, (("warning", 1), ("error", 2))),
+        )
+        for content, status, findings in cases:
+            self.write(path, content)
+            self.commit()
+            for annotations in (False, True):
+                with self.subTest(content=content, annotations=annotations):
+                    result = run(self.base, annotations)
+                    self.assertEqual(result.returncode, status, result.stderr)
+                    for severity, line in findings:
+                        expected = (f"::{severity} file={path},line={line}::" if annotations
+                                    else f"{path}:{line}: {severity}:")
+                        self.assertTrue(expected in result.stdout, result.stdout)
+                    if not annotations:
+                        self.assertFalse("::warning" in result.stdout)
+                        self.assertFalse("::error" in result.stdout)
+        for annotations in (False, True):
+            with self.subTest(invalid_revision=True, annotations=annotations):
+                result = run("missing-revision", annotations)
+                self.assertEqual(result.returncode, 2)
+                if annotations:
+                    self.assertIn("::error::Unable to check", result.stdout)  # codespell:ignore assertin
+                else:
+                    self.assertTrue("Unable to check" in result.stderr)
 
 
 if __name__ == "__main__":
